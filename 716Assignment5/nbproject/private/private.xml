@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Elias/Documents/NetBeansProjects/716Assignment5/src/AddOn/HolidayGreeting.java</file>
+            <file>file:/C:/Users/Elias/Documents/NetBeansProjects/716Assignment5/src/Decorator/PreDocorator.java</file>
+            <file>file:/C:/Users/Elias/Documents/NetBeansProjects/716Assignment5/src/AddOn/AddOn.java</file>
+            <file>file:/C:/Users/Elias/Documents/NetBeansProjects/716Assignment5/src/BasicReceipt/StoreHeader.java</file>
+            <file>file:/C:/Users/Elias/Documents/NetBeansProjects/716Assignment5/src/Decorator/Decorator.java</file>
+            <file>file:/C:/Users/Elias/Documents/NetBeansProjects/716Assignment5/src/Factory/ReceiptFactory.java</file>
+            <file>file:/C:/Users/Elias/Documents/NetBeansProjects/716Assignment5/src/AddOn/Coupon100Get10Percent.java</file>
+            <file>file:/C:/Users/Elias/Documents/NetBeansProjects/716Assignment5/src/Items/PurchasedItems.java</file>
+            <file>file:/C:/Users/Elias/Documents/NetBeansProjects/716Assignment5/src/Interface/Receipt.java</file>
+            <file>file:/C:/Users/Elias/Documents/NetBeansProjects/716Assignment5/src/AddOn/Rebate.java</file>
+            <file>file:/C:/Users/Elias/Documents/NetBeansProjects/716Assignment5/src/Decorator/PostDecorator.java</file>
+            <file>file:/C:/Users/Elias/Documents/NetBeansProjects/716Assignment5/src/BasicReceipt/BasicReceipt.java</file>
+            <file>file:/C:/Users/Elias/Documents/NetBeansProjects/716Assignment5/src/Tax/TaxComputationMethod.java</file>
+            <file>file:/C:/Users/Elias/Documents/NetBeansProjects/716Assignment5/src/Tax/MDTaxComputation.java</file>
+            <file>file:/C:/Users/Elias/Documents/NetBeansProjects/716Assignment5/src/AddOn/Coupon.java</file>
+            <file>file:/C:/Users/Elias/Documents/NetBeansProjects/716Assignment5/src/pkg716assignment5/Main.java</file>
+            <file>file:/C:/Users/Elias/Documents/NetBeansProjects/716Assignment5/src/AddOn/Rebate1406.java</file>
+            <file>file:/C:/Users/Elias/Documents/NetBeansProjects/716Assignment5/src/AddOn/SecondaryHeading.java</file>
+            <file>file:/C:/Users/Elias/Documents/NetBeansProjects/716Assignment5/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/Elias/Documents/NetBeansProjects/716Assignment5/src/Tax/MATaxComputation.java</file>
+            <file>file:/C:/Users/Elias/Documents/NetBeansProjects/716Assignment5/src/Tax/CATaxComputation.java</file>
+            <file>file:/C:/Users/Elias/Documents/NetBeansProjects/716Assignment5/src/Items/StoreItem.java</file>
+        </group>
+    </open-files>
+</project-private>
