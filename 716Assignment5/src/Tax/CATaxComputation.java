@@ -16,11 +16,13 @@ public class CATaxComputation extends TaxComputationMethod {
 
     @Override
     public double computeTax(PurchasedItems items, Date date) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        double tax;
+        tax = 0.0725;
+        return tax;
     }
 
     @Override
     protected boolean taxHoliday(Date date) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }   
+        return false;
+    }
 }

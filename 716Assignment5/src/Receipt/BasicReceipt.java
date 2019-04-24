@@ -20,7 +20,7 @@ public class BasicReceipt implements Receipt {
     private Date date; // may also be a String type
     private PurchasedItems items;
 
-    public BasicReceipt() { 
+    public BasicReceipt() {
     }
 
     public BasicReceipt(PurchasedItems items, Date date) { // Date may also be a String type
@@ -31,21 +31,21 @@ public class BasicReceipt implements Receipt {
     public void setStoreHeader(StoreHeader h) {
         store_header = h;
     }
-    
+
     //sets tax to specfic state
     public void setTaxComputationMethod(TaxComputationMethod tc) {
         this.tc = tc;
     }
 
-    private double subTotalCosts() {
+    private double totalCosts() {
         return items.getTotalCost();
     }
 
     private double setTax() {
-        return subTotalCosts() * tc.computeTax(items, date);
+        return totalCosts() * tc.computeTax(items, date);
     }
-    
-    private TaxComputationMethod getTaxComputation(){
+
+    private TaxComputationMethod getTaxComputation() {
         return tc;
     }
 
@@ -53,6 +53,7 @@ public class BasicReceipt implements Receipt {
     public void prtReceipt() {
         //to implement
         //Store Header
+        System.out.println("");
         System.out.println("Best Buy");
         System.out.println(store_header.toString());
         System.out.println("");
@@ -60,12 +61,13 @@ public class BasicReceipt implements Receipt {
         System.out.println("Date of Sale: " + this.date);
         System.out.println("");
         //Itemized Purchases
+        System.out.println("ITEM #");
         items.printItems();
         System.out.println("");
         //Total Sales (without sales tax)
-        System.out.println("Total Sales: " + subTotalCosts());
+        System.out.println("Total Sales: " + totalCosts());
         //Amount Due (with added sales tax)
-        System.out.println("Total Cost: " + subTotalCosts() + setTax());
-
+        System.out.println("Total Cost: " + (totalCosts() + setTax()));
+        System.out.println("--------------------------------------------------------");
     }
 }

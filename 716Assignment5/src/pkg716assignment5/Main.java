@@ -52,11 +52,11 @@ public class Main {
         ReceiptFactory receiptFactory = new ReceiptFactory();
         // 3. Prompts user for items to purchase, storing each in PurchasedItems.
         do {
-            System.out.println("--------------------------------------------------------");
+            System.out.println("********************************************************");
             System.out.println("Enter 1: Enter Items to Purchase");
             System.out.println("Enter 2: Display Receipt");
             System.out.println("Enter 0 to exit");
-            System.out.println("--------------------------------------------------------");
+            System.out.println("********************************************************");
             input = scanner.nextInt();
             switch (input) {
 
@@ -109,7 +109,7 @@ public class Main {
     }
 
     private static void allItems() {
-        System.out.println("---------------------------------------------------------------");
+        System.out.println("********************************************************");
         System.out.println("1 - Laptop: 1406 / $1400");
         System.out.println("2 - Monitor: 1111 / $250");
         System.out.println("3 - Candy: 1020 / $2");
@@ -117,7 +117,7 @@ public class Main {
         System.out.println("5 - Dog: 9745 / $2000");
         System.out.println("6 - Beer: 5643 / $12");
         System.out.println("7 - Mouse: 7789 / $42");
-        System.out.println("---------------------------------------------------------------");
+        System.out.println("********************************************************");
         System.out.println("Enter Item number to purchase ");
     }
 }

@@ -22,7 +22,7 @@ public class MATaxComputation extends TaxComputationMethod {
         if ((taxHoliday(date)) && (items.containsItem("1406"))) {
             tax = 0;
         } else {
-            tax = 0.06;
+            tax = 0.10;
         }
         return tax;
         // calls private method taxHoliday as part of this computation
@@ -30,6 +30,6 @@ public class MATaxComputation extends TaxComputationMethod {
 
     @Override
     protected boolean taxHoliday(Date date) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return false;
     }
 }

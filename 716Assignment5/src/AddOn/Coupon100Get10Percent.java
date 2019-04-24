@@ -22,6 +22,6 @@ public class Coupon100Get10Percent implements Coupon {
     }
 
     public String getLines() {
-        return "Coupon with 10% off";
+        return "Coupon with 10% off \n";
     }
 }

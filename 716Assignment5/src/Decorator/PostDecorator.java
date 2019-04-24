@@ -13,18 +13,18 @@ import Receipt.Receipt;
  * @author Elias
  */
 public class PostDecorator extends Decorator {
+
     private AddOn a;
-    
+
     public PostDecorator(Receipt r, AddOn a) {
         super(r, a);
-        //this.a = a;
+        this.a = a;
     }
-    
+
     @Override
     public void prtReceipt() {
-        System.out.println(a.getLines());
         callTrailer();
-        
+        System.out.println(a.getLines());
         // similar, except that prtReceipt print the add on information
         // after the other parts of the receipt are printed
     }

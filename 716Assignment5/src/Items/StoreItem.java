@@ -35,6 +35,6 @@ public class StoreItem {
     }
 
     public void getString() {
-        System.out.println(itemDescription + ": " + itemCode + "/ $" + itemPrice);
+        System.out.println(itemCode + " | " + itemDescription + " | $" + itemPrice);
     }
 }

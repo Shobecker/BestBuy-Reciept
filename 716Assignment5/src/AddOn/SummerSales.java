@@ -5,22 +5,19 @@
  */
 package AddOn;
 
-import AddOn.Rebate;
 import Items.PurchasedItems;
 
 /**
  *
  * @author Elias
  */
-public class Rebate1406 implements Rebate {
+public class SummerSales implements SecondaryHeading{
 
     public boolean applies(PurchasedItems items) {
-        return items.containsItem("1406");
+        return true; // SecondaryHeading decorators always applied
     }
 
     public String getLines() {
-        return "Mail-in Rebate for Item #1406\n" + "Name:\n" + ":Address:\n\n"
-                + "Mail to: Best Buy Rebates, P.O. Box 1400, Orlando, FL\n";
-        
+        return "* Summer Sales are Hot at Best Buy *";
     }
 }

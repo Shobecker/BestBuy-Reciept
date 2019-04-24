@@ -18,12 +18,12 @@ public class PreDecorator extends Decorator {
 
     public PreDecorator(Receipt r, AddOn a) {
         super(r, a);
-        //this.a = a;
+        this.a = a;
     }
 
     @Override
     public void prtReceipt() {
-        callTrailer();
         System.out.println(a.getLines());
+        callTrailer();
     }
 }

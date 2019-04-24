@@ -25,6 +25,7 @@ public class ReceiptFactory {
 
     StoreHeader store_header; // contains street_addr, zip_code, state_code, phone num, store num
     private TaxComputationMethod[] taxComputationsObjs; // tax computation objs (for each state)
+    private TaxComputationMethod taxComputationObj;
     private AddOn[] addOns; // secondary heading, rebate and coupon add-ons (hardcoded here)
     private Date date;
     private int index = -1;
@@ -35,11 +36,12 @@ public class ReceiptFactory {
         taxComputationsObjs[0] = new MDTaxComputation();
         taxComputationsObjs[1] = new CATaxComputation();
         taxComputationsObjs[2] = new MATaxComputation();
-        
-        addOns = new AddOn[3];
+
+        addOns = new AddOn[4];
         addOns[0] = new HolidayGreeting();
-        addOns[1] = new Rebate1406();
-        addOns[2] = new Coupon100Get10Percent();
+        addOns[1] = new SummerSales();
+        addOns[2] = new Rebate1406();
+        addOns[3] = new Coupon100Get10Percent();
 
         // 2. Reads config file to create and save StoreHeader object (store_num, street_addr, etc.) to be used on all receipts
         String input = "";
@@ -58,12 +60,15 @@ public class ReceiptFactory {
         switch (state_code) {
             case "MD":
                 index = 0;
+                taxComputationObj = taxComputationsObjs[index];
                 break;
             case "CA":
                 index = 1;
+                taxComputationObj = taxComputationsObjs[index];
                 break;
             case "MA":
                 index = 2;
+                taxComputationObj = taxComputationsObjs[index];
                 break;
             default:
                 System.out.println("Invalid state");
@@ -73,29 +78,31 @@ public class ReceiptFactory {
 
     public Receipt getReceipt(PurchasedItems items, Date date) {
         // 1. Sets the current date of the BasicReceipt.
-        BasicReceipt basicReceipt = new BasicReceipt(items, date);
+        Receipt receipt = new BasicReceipt(items, date);
+
         // 2. Sets StoreHeader object of the BasicReceipt (by call to SetStoreHeader of BasicReceipt)
-        basicReceipt.setStoreHeader(store_header);
+        ((BasicReceipt) receipt).setStoreHeader(store_header);
+
         // 3. Sets the TaxComputationMethod object of the BasicReceipt (by call to the setTaxComputationMethod of BasicReceipt).
-        basicReceipt.setTaxComputationMethod(taxComputationsObjs[index]);
+        ((BasicReceipt) receipt).setTaxComputationMethod(taxComputationObj);
         // 4. Traverses over all AddOn objects, calling the applies method of each. If an AddOn object applies, 
         //then determines if the AddOn is of type SecondaryHeader, Rebate, or Coupon. If of type SecondaryHeader, 
         //then creates a PreDecorator for othe AddOn {}. If of type Rebate or Coupon, then creates a PostDecorator.
-        for (int i = 0; i < addOns.length; i++) {
+
+        for (int i = 1; i < addOns.length; i++) {
             if (addOns[i].applies(items)) {
+                // 5. Links in the decorator object based on the Decorator design pattern.
                 if (addOns[i] instanceof SecondaryHeading) {
-                    basicReceipt = new PreDecorator (basicReceipt, addOns[i]);
+                    receipt = new PreDecorator(receipt, addOns[i]);
                 } else if (addOns[i] instanceof Rebate || addOns[i] instanceof Coupon) {
-                    PostDecorator postDecorator = new PostDecorator (basicReceipt, addOns[i]);
-                } 
+                    receipt = new PostDecorator(receipt, addOns[i]);
+                }
             }
         }
 
-        // 5. Links in the decorator object based on the Decorator design pattern.
         //Receipt newReceipt = preDecorator(basicReceipt);
-        
         // 6. Returns decorated BasicReceipt object as type Receipt.
-        return basicReceipt;
+        return receipt;
     }
 
 }

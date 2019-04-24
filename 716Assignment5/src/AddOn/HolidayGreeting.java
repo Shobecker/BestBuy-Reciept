@@ -7,6 +7,7 @@ package AddOn;
 
 import AddOn.SecondaryHeading;
 import Items.PurchasedItems;
+import java.util.Date;
 
 /**
  *
@@ -16,6 +17,10 @@ public class HolidayGreeting implements SecondaryHeading{
 
     public boolean applies(PurchasedItems items) {
         return true; // SecondaryHeading decorators always applied
+    }
+    
+    public boolean applies(Date date) {
+        return true;
     }
 
     public String getLines() {
